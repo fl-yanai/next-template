@@ -1,38 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# clone したとき
 
-## Getting Started
+.git フォルダを削除して新しいプロジェクト名に変更
 
-First, run the development server:
+# ローカルで開発を始めるとき
+
+## パッケージのインストールなど
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+yarn install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## サーバーを立ち上げる
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn dev
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+# ディレクトリ構成
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## /src/components
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+アプリケーションで利用するコンポーネントを保存
+components 配下のディレクトリに関する説明は、ディレクトリ内の README を参照
 
-## Learn More
+## /src/features
 
-To learn more about Next.js, take a look at the following resources:
+ある特定の機能、ドメインでしか使わない api へのアクセサや定数、型、hooks などを保存
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## /src/libs
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+ライブラリの設定や設定済みインスタンスを export するファイルを保存
 
-## Deploy on Vercel
+## /src/pages
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Next のページコンポーネントを保存
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## /src/styles
+
+スタイルを保存(tailwindcss 使用)
+
+## /src/types
+
+型情報を保存
+
+# その他
+
+## .vscode
+
+eslint,prettier の自動フォーマットを行う
