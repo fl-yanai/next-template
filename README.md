@@ -21,6 +21,7 @@ yarn dev
 ### /src/components
 
 アプリケーションで利用するコンポーネントを保存
+
 components 配下のディレクトリに関する説明は、ディレクトリ内の README を参照
 
 ### /src/features
