@@ -1,4 +1,4 @@
-export interface TypeCommonStyle {
+export interface TypeStyleDefault {
   // コンポーネント親要素やwrap要素のマージン(padding)
   blockMargin?: string
   // コンポーネント本体のスタイル
@@ -19,4 +19,6 @@ export interface TypeCommonStyle {
   leading?: string
   duration?: string
   placeholderColor?: string
+  focus?: boolean
+  focusBorderColor?: string
 }

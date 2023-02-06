@@ -1,16 +1,24 @@
-import { useEffect } from 'react'
+import { useState } from 'react'
+import FormText from '@/components/parts/modules/forms/FormText'
 import { useAddress } from '@/features/address/hooks/useAddress'
 
 const Home = () => {
   const { address, loading, error, searchAddress } = useAddress()
-  useEffect(() => {
-    searchAddress('5140007')
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  const [zipcode, setZipcode] = useState('7830060')
   return (
     <>
-      {error && <p>エラーが発生しました</p>}
-      {loading ? <p>取得中</p> : <p>{address}</p>}
+      <FormText
+        value={zipcode}
+        changeAction={setZipcode}
+        label='郵便番号を入力してください'
+        htmlFor_id='address'
+        error={error}
+        errorMessage='エラーが発生しました'
+      />
+      <button onClick={() => searchAddress(zipcode)}>検索</button>
+      <p className='md:custom-font-[36,,500,,0.05] custom-font-[18,24,400,,0.05]'>
+        {loading ? '取得中' : <>{address}</>}
+      </p>
     </>
   )
 }

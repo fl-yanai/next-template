@@ -1,14 +1,20 @@
 import { useState } from 'react'
 import { getAddress } from '../api/getAddress'
-import { TypeAddress } from '@/types/address/typeAddresses'
+import { TypeAddress } from '@/types/features/address/typeAddresses'
 
 export const useAddress = () => {
   const [address, setAddress] = useState('')
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
 
-  const searchAddress = async (zipcode: string) => {
+  const initializeData = () => {
     setLoading(true)
+    setError(false)
+    setAddress('')
+  }
+
+  const searchAddress = async (zipcode: string) => {
+    initializeData()
     let a: TypeAddress
     try {
       a = await getAddress(zipcode)
