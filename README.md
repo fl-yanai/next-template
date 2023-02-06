@@ -48,3 +48,7 @@ Next のページコンポーネントを保存
 ### .vscode
 
 eslint,prettier の自動フォーマットを行う
+
+### tailwind.config.js
+
+custom-font-[minSize,maxSize,fontWeight,lineHeight,letterSpacing,minDisplayWidth,maxDisplyaWidth,]を指定すると自動で font 関連の css を設定してくれる
