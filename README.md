@@ -18,6 +18,12 @@ yarn dev
 
 ## ディレクトリ構成
 
+構成は次の記事を参考にしている
+
+[Reactのディレクトリ構造パターン例](https://www.nitaking.dev/react-directory-structure-2021)
+
+## ディレクトリ構成
+
 ### /src/components
 
 アプリケーションで利用するコンポーネントを保存
