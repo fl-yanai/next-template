@@ -6,23 +6,18 @@ const getClamSize = (minSize, maxSize, minWidth = 390, maxWidth = 750) => {
   const clam = (ms) => {
     const v = Math.floor(((100 * (maxSize - ms)) / (maxWidth - minWidth)) * 100) / 100
     const r = (minWidth * maxSize - maxWidth * ms) / (minWidth - maxWidth)
-    return { v, r }
+    return `clamp(${rem(ms)}, ${v}vw + ${rem(r)}, ${rem(maxSize)})`
   }
   if (minSize - maxSize === 0 || !maxSize) {
     return `${rem(minSize)}`
   } else if (!minSize) {
-    const ms = (() => {
-      if (maxSize - 6 > 10) {
-        return maxSize - 6
-      } else {
-        return 10
-      }
-    })()
-    const { v, r } = clam(ms)
-    return `clamp(${rem(ms)}, ${v}vw + ${rem(r)}, ${rem(maxSize)})`
+    if (maxSize - 6 > 10) {
+      return clam(maxSize - 6)
+    } else {
+      return clam(10)
+    }
   } else {
-    const { v, r } = clam(minSize)
-    return `clamp(${rem(minSize)}, ${v}vw + ${rem(r)}, ${rem(maxSize)})`
+    return clam(minSize)
   }
 }
 
