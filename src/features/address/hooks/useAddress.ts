@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { getAddress } from '../api/getAddress'
-import { TypeAddress } from '@/types/typeAddresses'
+import { TypeAddress } from '@/types/address/typeAddresses'
 
 export const useAddress = () => {
   const [address, setAddress] = useState('')
