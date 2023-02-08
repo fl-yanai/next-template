@@ -16,7 +16,7 @@ const Home = () => {
         errorMessage='エラーが発生しました'
       />
       <button onClick={() => searchAddress(zipcode)}>検索</button>
-      <p className='md:custom-font-[36,,500,,0.05] custom-font-[,15,400,,0.05]'>
+      <p className='md:font-bold md:custom-font-[36-40--42] custom-font-[10-16-400-18-0.05]'>
         {loading ? '取得中' : <>{address}</>}
       </p>
     </>
