@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import FormWrapDefault from '../../elements/forms/FormWrapDefault'
 import InputText from '../../elements/inputs/InputText'
+import { TypeStyleDefault } from '@/types/commons/styles/typeStyles'
 import { TypeFormDefault } from '@/types/components/forms/typeForms'
-import { TypeStyleDefault } from '@/types/style/typeStyles'
 
 interface Props extends TypeStyleDefault, TypeFormDefault {
   value: string

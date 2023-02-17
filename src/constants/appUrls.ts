@@ -1,3 +1,3 @@
-export const appUrls = {
-  index: () => '',
+export class AppUrls {
+  public static readonly INDEX = '/'
 }

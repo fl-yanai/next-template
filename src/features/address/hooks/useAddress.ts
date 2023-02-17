@@ -3,31 +3,33 @@ import { getAddress } from '../api/getAddress'
 import { TypeAddress } from '@/types/features/address/typeAddresses'
 
 export const useAddress = () => {
-  const [address, setAddress] = useState('')
+  const [address, setAddress] = useState<TypeAddress[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(false)
+  const [multipleAddress, setMultipleAddress] = useState(false)
 
   const initializeData = () => {
+    setAddress([])
     setLoading(true)
     setError(false)
-    setAddress('')
+    setMultipleAddress(false)
   }
 
   const searchAddress = async (zipcode: string) => {
     initializeData()
-    let a: TypeAddress
+    let a: TypeAddress[]
     try {
-      a = await getAddress(zipcode)
-      setAddress(
-        `${a.results[0].address1}${a.results[0].address2}${
-          a.results[0].address3 ? a.results[0].address3 : ''
-        }`,
-      )
+      const data = await getAddress(zipcode)
+      a = data['results']
+      if (a.length > 1) {
+        setMultipleAddress(true)
+      }
+      setAddress(a)
     } catch (err) {
       setError(true)
     }
     setLoading(false)
   }
 
-  return { address, loading, error, searchAddress }
+  return { address, loading, error, multipleAddress, searchAddress }
 }
