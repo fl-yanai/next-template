@@ -44,14 +44,12 @@ const Index = () => {
             {address.length === 0 && <></>}
             {address.length === 1 && <p>{address[0].address1}</p>}
             {multipleAddress && (
-              <div>
-                <SelectOneValue
-                  value={multiSelectAddress}
-                  changeAction={setMultiSelectAddress}
-                  name='select address'
-                  options={multiSelectAddressOptions}
-                />
-              </div>
+              <SelectOneValue
+                value={multiSelectAddress}
+                changeAction={setMultiSelectAddress}
+                name='select address'
+                options={multiSelectAddressOptions}
+              />
             )}
           </>
         )}
