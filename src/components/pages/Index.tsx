@@ -37,8 +37,10 @@ const Index = () => {
         error={error}
         errorMessage='エラーが発生しました'
       />
-      <button onClick={() => searchAddress(zipcode)}>検索</button>
-      <div className='font-bold clamp-text-[12,24] clamp-leading-[16,28] --Target --fadeIn'>
+      <button onClick={() => searchAddress(zipcode)} className='--Target --TargetFadeIn'>
+        検索
+      </button>
+      <div className='font-bold clamp-text-[12,24] clamp-leading-[16,28] '>
         {loading ? (
           <p>取得中</p>
         ) : (
