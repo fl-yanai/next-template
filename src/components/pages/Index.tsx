@@ -6,7 +6,7 @@ import { useAddress } from '@/features/address/hooks/useAddress'
 import { useFadeInAnimation } from '@/libs/fadeInAnimation/hooks/useFadeInAnimation'
 
 const Index = () => {
-  const { address, loading, error, multipleAddress, searchAddress } = useAddress()
+  const { address, loading, multipleAddress, errorMessage, searchAddress } = useAddress()
   const [zipcode, setZipcode] = useState('0380101')
   const [multiSelectAddress, setMultiSelectAddress] = useState('')
   const [multiSelectAddressOptions, setMultiSelectAddressOptions] = useState<TypeSelectOptions[]>(
@@ -34,8 +34,8 @@ const Index = () => {
         changeAction={setZipcode}
         label='郵便番号を入力してください'
         htmlFor_id='address'
-        error={error}
-        errorMessage='エラーが発生しました'
+        error={errorMessage !== ''}
+        errorMessage={errorMessage}
       />
       <button onClick={() => searchAddress(zipcode)} className='--Target --TargetFadeIn'>
         検索
