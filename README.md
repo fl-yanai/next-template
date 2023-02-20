@@ -41,11 +41,11 @@ components 配下のディレクトリに関する説明は、ディレクトリ
 
 ### /src/features
 
-ある特定の機能、ドメインでしか使わない api へのアクセサや定数、型、hooks、conmopents などを保存
+ある特定の機能、ドメインでしか使わない api へのアクセサや定数、型、hooks、conmopents、styles などを保存
 
 ### /src/libs
 
-プロジェクト全体で使う api へのアクセサや定数、型、hooks、conmopents、ライブラリの設定や設定済みインスタンスを export するファイルなどを保存
+プロジェクト全体で使う api へのアクセサや定数、型、hooks、conmopents、styles、 ライブラリの設定や設定済みインスタンスを export するファイルなどを保存
 
 ### /src/pages
 
@@ -53,7 +53,7 @@ Next のページコンポーネントを保存
 
 ### /src/styles
 
-スタイルを保存(tailwindcss 使用)
+プロジェクト全体で使うスタイルを保存(tailwindcss 使用)
 
 ### /src/types
 
