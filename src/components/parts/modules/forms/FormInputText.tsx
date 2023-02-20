@@ -1,15 +1,22 @@
 import { FC } from 'react'
-import FormWrapDefault from '../../elements/forms/FormWrapDefault'
 import InputText from '../../elements/inputs/InputText'
-import { TypeStyleDefault } from '@/types/commons/styles/typeStyles'
-import { TypeFormDefault } from '@/types/components/forms/typeForms'
+import FormWrapDefault from './FormWrapDefault'
+import { TypeFormDefault } from '@/components/types/forms/typeForms'
+import { TypeStyleDefault } from '@/components/types/styles/typeStyles'
 
 interface Props extends TypeStyleDefault, TypeFormDefault {
   value: string
   changeAction: (value: string) => void
 }
 
-const FormText: FC<Props> = ({ htmlFor_id, value, changeAction, label, error, errorMessage }) => {
+const FormInputText: FC<Props> = ({
+  htmlFor_id,
+  value,
+  changeAction,
+  label,
+  error,
+  errorMessage,
+}) => {
   const wrapProps = { label, error, errorMessage, htmlFor_id }
   const inputProps = { value, changeAction, htmlFor_id }
   return (
@@ -18,4 +25,4 @@ const FormText: FC<Props> = ({ htmlFor_id, value, changeAction, label, error, er
     </FormWrapDefault>
   )
 }
-export default FormText
+export default FormInputText

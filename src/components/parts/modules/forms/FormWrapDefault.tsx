@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import { TypeStyleDefault } from '@/types/commons/styles/typeStyles'
-import { TypeFormDefault } from '@/types/components/forms/typeForms'
+import { TypeFormDefault } from '@/components/types/forms/typeForms'
+import { TypeStyleDefault } from '@/components/types/styles/typeStyles'
 
 interface Props extends TypeStyleDefault, TypeFormDefault {
   children: React.ReactNode

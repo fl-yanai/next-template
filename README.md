@@ -29,22 +29,23 @@ yarn dev
 構成は次の記事を参考にしている
 
 [React のディレクトリ構造パターン例](https://www.nitaking.dev/react-directory-structure-2021)
+[パッケージング参考](https://qiita.com/honey32/items/dbf3c5a5a71636374567)
 
 ## ディレクトリ構成
 
 ### /src/components
 
-アプリケーションで利用するコンポーネントを保存
+アプリケーションで利用する汎用的なコンポーネントを保存
 
 components 配下のディレクトリに関する説明は、ディレクトリ内の README を参照
 
 ### /src/features
 
-ある特定の機能、ドメインでしか使わない api へのアクセサや定数、型、hooks などを保存
+ある特定の機能、ドメインでしか使わない api へのアクセサや定数、型、hooks、conmopents などを保存
 
 ### /src/libs
 
-ライブラリの設定や設定済みインスタンスを export するファイルを保存
+プロジェクト全体で使う api へのアクセサや定数、型、hooks、conmopents、ライブラリの設定や設定済みインスタンスを export するファイルなどを保存
 
 ### /src/pages
 
@@ -56,7 +57,7 @@ Next のページコンポーネントを保存
 
 ### /src/types
 
-型情報を保存
+プロジェクト全体で使う型情報を保存
 
 ### /src/constants
 
@@ -74,4 +75,4 @@ eslint,prettier の自動フォーマットを行う
 
 ### tailwind.config.js
 
-custom-font-[minSize,maxSize,fontWeight,lineHeight,letterSpacing,minDisplayWidth,maxDisplyaWidth,]を指定すると自動で font 関連の css を設定してくれる
+- clamp-\*\*-[minSize,maxSize,minDisplayWidth,maxDisplyaWidth]で clamp を設定してくれる

@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import { TypeStyleDefault } from '@/types/commons/styles/typeStyles'
-import { TypeSelectDefault } from '@/types/components/selects/typeSelects'
+import { TypeSelectDefault } from '@/components/types/selects/typeSelects'
+import { TypeStyleDefault } from '@/components/types/styles/typeStyles'
 
 interface Props extends TypeSelectDefault, TypeStyleDefault {
   value: string

@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import SelectOneValue from '../parts/elements/selects/SelectOneValue'
-import FormText from '@/components/parts/modules/forms/FormText'
+import FormInputText from '@/components/parts/modules/forms/FormInputText'
+import { TypeSelectOptions } from '@/components/types/selects/typeSelects'
 import { useAddress } from '@/features/address/hooks/useAddress'
-import { TypeSelectOptions } from '@/types/components/selects/typeSelects'
+import { useFadeInAnimation } from '@/libs/fadeInAnimation/hooks/useFadeInAnimation'
 
 const Index = () => {
   const { address, loading, error, multipleAddress, searchAddress } = useAddress()
@@ -11,6 +12,7 @@ const Index = () => {
   const [multiSelectAddressOptions, setMultiSelectAddressOptions] = useState<TypeSelectOptions[]>(
     [],
   )
+  useFadeInAnimation()
 
   useEffect(() => {
     if (multipleAddress) {
@@ -27,7 +29,7 @@ const Index = () => {
 
   return (
     <>
-      <FormText
+      <FormInputText
         value={zipcode}
         changeAction={setZipcode}
         label='郵便番号を入力してください'
@@ -36,7 +38,7 @@ const Index = () => {
         errorMessage='エラーが発生しました'
       />
       <button onClick={() => searchAddress(zipcode)}>検索</button>
-      <div className='font-bold clamp-text-[12,24] clamp-leading-[16,28]'>
+      <div className='font-bold clamp-text-[12,24] clamp-leading-[16,28] --Target --fadeIn'>
         {loading ? (
           <p>取得中</p>
         ) : (

@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import { TypeStyleDefault } from '@/types/commons/styles/typeStyles'
-import { TypeInputDefault } from '@/types/components/inputs/typeInputs'
+import { TypeInputDefault } from '@/components/types/inputs/typeInputs'
+import { TypeStyleDefault } from '@/components/types/styles/typeStyles'
 
 interface Props extends TypeStyleDefault, TypeInputDefault {
   value: string
