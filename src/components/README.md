@@ -5,7 +5,6 @@
 │   ├── README.md
 │   ├── types
 │   ├── styles
-│   ├── features
 │   ├── layouts
 │   ├── pages
 │   └── parts
@@ -17,7 +16,7 @@
 
 特定のページのみに使われるコンポーネントを格納
 
-## types, styles, features について
+## types, styles について
 
 特定のコンポーネント内でしか使わないものはここに格納
 
@@ -31,7 +30,6 @@ parts/ 配下に格納しても良い
 
 - 見出し、テキストそのもの
   - 共通の CSS にスタイルを記述してクラスで見た目を制御する
-    - styles/global.css に記載
 
 ### elements
 
