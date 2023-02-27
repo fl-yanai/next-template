@@ -1,16 +1,8 @@
 export const intersectionObserver = (
   targets: NodeListOf<Element>,
-  action: () => void,
+  callback: (entries: any, object: any) => void,
   options?: { root: Element | null; rootMargin: number; threshold: number },
 ) => {
-  const callback = (entries: any, object: any) => {
-    entries.forEach((entry: any) => {
-      if (!entry.isIntersecting) return
-      action()
-      object.unobserve(entry.target)
-    })
-  }
-
   const observer: IntersectionObserver = new IntersectionObserver(callback, {
     root: options ? options.root : null,
     rootMargin: options ? `${options.rootMargin}px` : '0px',
