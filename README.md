@@ -40,7 +40,7 @@ components 配下のディレクトリに関する説明は、ディレクトリ
 
 ### /src/features
 
-api へのアクセサや定数、型、hooks、conmopents、styles などを保存
+特定の api へのアクセサや定数、型、hooks、conmopents、styles などを保存
 
 ### /src/libs
 
