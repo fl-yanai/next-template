@@ -39,6 +39,7 @@ const Index = () => {
         htmlFor_id='address'
         error={errorMessage !== ''}
         errorMessage={errorMessage}
+        required={true}
       />
       <button onClick={() => searchAddress(zipcode)} className='--target --targetFadeIn'>
         検索

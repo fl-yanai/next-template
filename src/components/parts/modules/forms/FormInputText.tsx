@@ -16,9 +16,11 @@ const FormInputText: FC<Props> = ({
   label,
   error,
   errorMessage,
+  disabled,
+  required,
 }) => {
-  const wrapProps = { label, error, errorMessage, htmlFor_id }
-  const inputProps = { value, changeAction, htmlFor_id }
+  const wrapProps = { label, error, errorMessage, htmlFor_id, disabled, required }
+  const inputProps = { value, changeAction, htmlFor_id, disabled, required }
   return (
     <FormWrapDefault {...wrapProps}>
       <InputText {...inputProps} />

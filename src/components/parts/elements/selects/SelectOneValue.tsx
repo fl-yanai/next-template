@@ -12,7 +12,7 @@ const SelectOneValue: FC<Props> = ({
   changeAction,
   name,
   size,
-  disabled,
+  disabled = false,
   emptyLabel = '選択してください',
   options,
 }) => {

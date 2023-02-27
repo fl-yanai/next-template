@@ -20,10 +20,11 @@ const FormSelectOneValue: FC<Props> = ({
   name,
   size,
   disabled,
+  required,
   emptyLabel = '選択してください',
   options,
 }) => {
-  const wrapProps = { label, error, errorMessage, htmlFor_id }
+  const wrapProps = { label, error, errorMessage, htmlFor_id, disabled, required }
   const selectProps = { value, changeAction, name, size, disabled, emptyLabel, options }
   return (
     <FormWrapDefault {...wrapProps}>

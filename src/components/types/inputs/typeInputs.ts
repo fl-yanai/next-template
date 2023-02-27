@@ -24,4 +24,6 @@ export interface TypeInputDefault {
     | 'hidden'
   placeholder?: string
   htmlFor_id?: string
+  disabled?: boolean
+  required?: boolean
 }

@@ -5,4 +5,6 @@ export interface TypeFormDefault extends TypeInputDefault {
   label: string
   error?: boolean
   errorMessage?: React.ReactNode
+  disabled?: boolean
+  required?: boolean
 }

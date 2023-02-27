@@ -13,12 +13,15 @@ const FormWrapDefault: FC<Props> = ({
   children,
   blockMargin,
   htmlFor_id,
+  disabled = false,
+  required = false,
 }) => {
   return (
     <div className={blockMargin ? `${blockMargin}` : undefined}>
       <div className='mb-2'>
         <label htmlFor={htmlFor_id} className='text-black font-medium text-xs md:text-base'>
           {label}
+          {required ? <sup className='mx-1 text-[10px]'>※</sup> : <></>}
         </label>
       </div>
       {children}

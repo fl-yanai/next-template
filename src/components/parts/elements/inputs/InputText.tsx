@@ -20,8 +20,10 @@ const InputText: FC<Props> = ({
   focus = true,
   focusBorderColor = 'focus:!border-green-400',
   htmlFor_id,
+  disabled = false,
+  required = false,
 }) => {
-  const props = { type, placeholder, value }
+  const props = { type, placeholder, value, disabled, required }
   const styles = [padding, width, rounded]
   const borderStyles = [borderColor]
   return (
