@@ -1,4 +1,4 @@
-@import '@/libs/fadeInAnimation/styles/fadeInAnimation.css';
+@import '@/features/fadeInAnimation/styles/fadeInAnimation.css';
 
 @tailwind base;
 @tailwind components;

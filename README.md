@@ -30,8 +30,6 @@ yarn dev
 
 [React のディレクトリ構造パターン例](https://www.nitaking.dev/react-directory-structure-2021)
 
-[パッケージング参考](https://qiita.com/honey32/items/dbf3c5a5a71636374567)
-
 ## ディレクトリ構成
 
 ### /src/components
@@ -42,11 +40,11 @@ components 配下のディレクトリに関する説明は、ディレクトリ
 
 ### /src/features
 
-ある特定の機能、ドメインでしか使わない api へのアクセサや定数、型、hooks、conmopents、styles などを保存
+api へのアクセサや定数、型、hooks、conmopents、styles などを保存
 
 ### /src/libs
 
-プロジェクト全体で使う api へのアクセサや定数、型、hooks、conmopents、styles、 ライブラリの設定や設定済みインスタンスを export するファイルなどを保存
+ライブラリの設定や設定済みインスタンスを export するファイルなどを保存
 
 ### /src/pages
 

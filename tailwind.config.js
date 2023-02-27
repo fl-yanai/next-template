@@ -1,4 +1,4 @@
-const customClamp = require('./src/utils/tailwindCustomClamp')
+const customClamp = require('./src/utils/tailwindcssCustom/tailwindCustomClamp')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {

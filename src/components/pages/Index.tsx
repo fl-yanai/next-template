@@ -4,8 +4,8 @@ import SelectOneValue from '../parts/elements/selects/SelectOneValue'
 import FormInputText from '@/components/parts/modules/forms/FormInputText'
 import { TypeSelectOptions } from '@/components/types/selects/typeSelects'
 import { useAddress } from '@/features/address/hooks/useAddress'
-import { useFadeInAnimation } from '@/libs/fadeInAnimation/hooks/useFadeInAnimation'
-import { useSmoothScroll } from '@/libs/smoothScroll/hooks/useSmoothScroll'
+import { useFadeInAnimation } from '@/features/fadeInAnimation/hooks/useFadeInAnimation'
+import { useSmoothScroll } from '@/features/smoothScroll/hooks/useSmoothScroll'
 
 const Index = () => {
   const { address, loading, multipleAddress, errorMessage, searchAddress } = useAddress()
