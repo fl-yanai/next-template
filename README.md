@@ -8,7 +8,7 @@ or
 git clone git@github.com:fl-yanai/next-template.git projectName
 ```
 
-#### .git フォルダを削除して新しいプロジェクト名に変更
+#### .git フォルダを削除
 
 ## ローカルで開発を始めるとき
 
@@ -29,6 +29,7 @@ yarn dev
 構成は次の記事を参考にしている
 
 [React のディレクトリ構造パターン例](https://www.nitaking.dev/react-directory-structure-2021)
+
 [パッケージング参考](https://qiita.com/honey32/items/dbf3c5a5a71636374567)
 
 ## ディレクトリ構成
