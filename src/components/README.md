@@ -4,6 +4,8 @@
 ├── components
 │   ├── README.md
 │   ├── types
+│   ├── styles
+│   ├── features
 │   ├── layouts
 │   ├── pages
 │   └── parts
@@ -14,6 +16,12 @@
 ## pages について
 
 特定のページのみに使われるコンポーネントを格納
+
+## types, styles, features について
+
+特定のコンポーネント内でしか使わないものはここに格納
+
+parts/ 配下に格納しても良い
 
 ## parts ディレクトリ構成
 
