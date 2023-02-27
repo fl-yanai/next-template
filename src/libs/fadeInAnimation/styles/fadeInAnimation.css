@@ -1,7 +1,7 @@
-.--Target {
-  &.--TargetFadeIn {
+.--target {
+  &.--targetFadeIn {
     @apply opacity-0 transition duration-500;
-    &.--TargetPassed {
+    &.--targetPassed {
       @apply opacity-100;
     }
   }

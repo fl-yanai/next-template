@@ -37,7 +37,7 @@ const Index = () => {
         error={errorMessage !== ''}
         errorMessage={errorMessage}
       />
-      <button onClick={() => searchAddress(zipcode)} className='--Target --TargetFadeIn'>
+      <button onClick={() => searchAddress(zipcode)} className='--target --targetFadeIn'>
         検索
       </button>
       <div className='font-bold clamp-text-[12,24] clamp-leading-[16,28] '>

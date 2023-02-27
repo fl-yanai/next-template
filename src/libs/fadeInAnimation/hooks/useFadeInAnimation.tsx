@@ -9,7 +9,7 @@ export const useFadeInAnimation = (targetclassName?: string, observeredClassName
     const callback = (entries: any, object: any) => {
       entries.forEach((entry: any) => {
         if (!entry.isIntersecting) return
-        entry.target.classList.add(observeredClassName ? observeredClassName : '--TargetPassed')
+        entry.target.classList.add(observeredClassName ? observeredClassName : '--targetPassed')
         object.unobserve(entry.target)
       })
     }
@@ -22,7 +22,7 @@ export const useFadeInAnimation = (targetclassName?: string, observeredClassName
   }
 
   if (typeof document !== 'undefined') {
-    const targets = document.querySelectorAll(`.${targetclassName ? targetclassName : '--Target'}`)
+    const targets = document.querySelectorAll(`.${targetclassName ? targetclassName : '--target'}`)
     if (targets.length === 0) return
     intersectionObserver(targets)
   }
