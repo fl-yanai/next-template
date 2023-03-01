@@ -1,11 +1,9 @@
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import SelectOneValue from '../parts/elements/selects/SelectOneValue'
 import FormInputText from '@/components/parts/modules/forms/FormInputText'
 import { TypeSelectOptions } from '@/components/types/selects/typeSelects'
 import { useAddress } from '@/features/address/hooks/useAddress'
 import { useFadeInAnimation } from '@/features/fadeInAnimation/hooks/useFadeInAnimation'
-import { useSmoothScroll } from '@/features/smoothScroll/hooks/useSmoothScroll'
 
 const Index = () => {
   const { address, loading, multipleAddress, errorMessage, searchAddress } = useAddress()
@@ -15,7 +13,6 @@ const Index = () => {
     [],
   )
   useFadeInAnimation()
-  useSmoothScroll()
 
   useEffect(() => {
     if (multipleAddress) {
@@ -44,9 +41,6 @@ const Index = () => {
       <button onClick={() => searchAddress(zipcode)} className='--target --targetFadeIn'>
         検索
       </button>
-      <Link href={{ pathname: '/', query: { scrollTo: 'about' } }} as='/'>
-        <p>about</p>
-      </Link>
       <div className='font-bold clamp-text-[12,24] clamp-leading-[16,28] '>
         {loading ? (
           <p>取得中</p>

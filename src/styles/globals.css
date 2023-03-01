@@ -4,6 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html,
+  body {
+    @apply text-black font-medium text-base leading-5 tracking-normal;
+  }
+  img {
+    @apply w-full;
+  }
+}
+
 @layer utilities {
   .hidden-scrollbar {
     -ms-overflow-style: none;
