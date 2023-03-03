@@ -7,7 +7,7 @@
 @layer base {
   html,
   body {
-    @apply text-black font-medium text-base leading-5 tracking-normal;
+    @apply text-base font-medium leading-5 tracking-normal text-black;
   }
   img {
     @apply w-full;

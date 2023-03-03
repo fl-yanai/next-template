@@ -9,11 +9,11 @@ const OverlayBackGroundFixed: FC<Props> = ({ children, open }) => {
   return (
     <div
       className={
-        `fixed top-0 left-0 bg-[rgba(0,0,0,0.5)] w-full h-screen justify-center items-center overscroll-contain overflow-y-scroll hidden-scrollbar before:content-[""] before:w-[1px] before:h-[calc(100vh+1px)] before:flex after:content-[""] after:w-[1px] after:h-[calc(100vh+1px)] after:flex` +
+        `hidden-scrollbar fixed top-0 left-0 h-screen w-full items-center justify-center overflow-y-scroll overscroll-contain bg-[rgba(0,0,0,0.5)] before:flex before:h-[calc(100vh+1px)] before:w-[1px] before:content-[""] after:flex after:h-[calc(100vh+1px)] after:w-[1px] after:content-[""]` +
         (open ? ' flex scale-100' : ' scale-0')
       }
     >
-      <div className='w-full flex justify-center'>{children}</div>
+      <div className='flex w-full justify-center'>{children}</div>
     </div>
   )
 }

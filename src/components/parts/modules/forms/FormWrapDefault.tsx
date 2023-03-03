@@ -19,14 +19,14 @@ const FormWrapDefault: FC<Props> = ({
   return (
     <div className={`${wrapStyle ? `${wrapStyle.margin}` : ''}`}>
       <div className='mb-2'>
-        <label htmlFor={htmlFor_id} className='text-black font-medium text-xs md:text-base'>
+        <label htmlFor={htmlFor_id} className='text-xs font-medium text-black md:text-base'>
           {label}
           {required ? <sup className='mx-1 text-[10px]'>※</sup> : <></>}
         </label>
       </div>
       {children}
       {error && errorMessage && (
-        <p className='mt-1 text-xs md:text-sm text-error-color'>{errorMessage}</p>
+        <p className='mt-1 text-xs text-error-color md:text-sm'>{errorMessage}</p>
       )}
     </div>
   )

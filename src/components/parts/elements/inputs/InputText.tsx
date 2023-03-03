@@ -31,7 +31,7 @@ const InputText: FC<Props> = ({
       {...props}
       onChange={(e) => changeAction(e.target.value)}
       className={`${styles.join(' ')} ${border ? `border ${borderStyles.join(' ')}` : ``} ${
-        focus ? `focus:!outline-0 focus:border ${focusBorderColor}` : ``
+        focus ? `focus:border focus:!outline-0 ${focusBorderColor}` : ``
       }`}
       id={htmlFor_id ? htmlFor_id : undefined}
     />
