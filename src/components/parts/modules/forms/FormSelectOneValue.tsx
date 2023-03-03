@@ -1,11 +1,11 @@
 import { FC } from 'react'
 import SelectOneValue from '../../elements/selects/SelectOneValue'
 import FormWrapDefault from './FormWrapDefault'
-import { TypeFormDefault } from '@/components/types/forms/typeForms'
-import { TypeSelectDefault } from '@/components/types/selects/typeSelects'
-import { TypeStyleDefault } from '@/components/types/styles/typeStyles'
+import { typeFormDefault } from '@/components/types/typeForms'
+import { typeSelectDefault } from '@/components/types/typeSelects'
+import { typeStyleWrap } from '@/components/types/typeStyles'
 
-interface Props extends TypeStyleDefault, TypeFormDefault, TypeSelectDefault {
+interface Props extends typeStyleWrap, typeFormDefault, typeSelectDefault {
   value: string
   changeAction: (value: string) => void
 }
@@ -23,8 +23,9 @@ const FormSelectOneValue: FC<Props> = ({
   required,
   emptyLabel = '選択してください',
   options,
+  wrapStyle,
 }) => {
-  const wrapProps = { label, error, errorMessage, htmlFor_id, disabled, required }
+  const wrapProps = { label, error, errorMessage, htmlFor_id, disabled, required, wrapStyle }
   const selectProps = { value, changeAction, name, size, disabled, emptyLabel, options }
   return (
     <FormWrapDefault {...wrapProps}>

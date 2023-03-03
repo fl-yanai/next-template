@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
+import LayoutDataFetching from '../layouts/LayoutDataFetching'
 import SelectOneValue from '../parts/elements/selects/SelectOneValue'
 import FormInputText from '@/components/parts/modules/forms/FormInputText'
-import { TypeSelectOptions } from '@/components/types/selects/typeSelects'
+import { typeSelectOptions } from '@/components/types/typeSelects'
 import { useAddress } from '@/features/address/hooks/useAddress'
 import { useFadeInAnimation } from '@/features/fadeInAnimation/hooks/useFadeInAnimation'
 
@@ -9,14 +10,14 @@ const Index = () => {
   const { address, loading, multipleAddress, errorMessage, searchAddress } = useAddress()
   const [zipcode, setZipcode] = useState('0380101')
   const [multiSelectAddress, setMultiSelectAddress] = useState('')
-  const [multiSelectAddressOptions, setMultiSelectAddressOptions] = useState<TypeSelectOptions[]>(
+  const [multiSelectAddressOptions, setMultiSelectAddressOptions] = useState<typeSelectOptions[]>(
     [],
   )
   useFadeInAnimation()
 
   useEffect(() => {
     if (multipleAddress) {
-      let o: TypeSelectOptions[] = []
+      let o: typeSelectOptions[] = []
       address.map((item) => {
         o.push({
           value: `${item.address1}${item.address2}${item.address3}`,
@@ -28,7 +29,7 @@ const Index = () => {
   }, [multipleAddress, address])
 
   return (
-    <>
+    <LayoutDataFetching fetched={!loading}>
       <FormInputText
         value={zipcode}
         changeAction={setZipcode}
@@ -59,7 +60,8 @@ const Index = () => {
           </>
         )}
       </div>
-    </>
+      <br />
+    </LayoutDataFetching>
   )
 }
 export default Index

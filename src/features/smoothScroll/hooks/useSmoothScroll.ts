@@ -18,7 +18,7 @@ export const useSmoothScroll = (queryName = 'scrollTo', offset = 0) => {
 
   const smoothScroll = (scrollTo: string, pageJump?: string) => {
     if (scrollTo === '') return
-    if (pageJump !== '') {
+    if (pageJump === undefined) {
       toScroll(scrollTo)
     } else {
       router.push({ pathname: pageJump, query: { [queryName]: scrollTo } })

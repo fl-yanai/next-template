@@ -1,4 +1,4 @@
-export interface TypeInputDefault {
+export interface typeInputDefault {
   type?:
     | 'text'
     | 'email'

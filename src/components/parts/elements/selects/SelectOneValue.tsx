@@ -1,8 +1,8 @@
 import { FC } from 'react'
-import { TypeSelectDefault } from '@/components/types/selects/typeSelects'
-import { TypeStyleDefault } from '@/components/types/styles/typeStyles'
+import { typeSelectDefault } from '@/components/types/typeSelects'
+import { typeStyleDefault } from '@/components/types/typeStyles'
 
-interface Props extends TypeSelectDefault, TypeStyleDefault {
+interface Props extends typeSelectDefault, typeStyleDefault {
   value: string
   changeAction: (value: string) => void
 }

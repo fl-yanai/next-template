@@ -1,6 +1,6 @@
-import { TypeInputDefault } from '../inputs/typeInputs'
+import { typeInputDefault } from './typeInputs'
 
-export interface TypeFormDefault extends TypeInputDefault {
+export interface typeFormDefault extends typeInputDefault {
   htmlFor_id: string
   label: string
   error?: boolean

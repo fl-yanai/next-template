@@ -1,8 +1,8 @@
 import { FC } from 'react'
-import { TypeFormDefault } from '@/components/types/forms/typeForms'
-import { TypeStyleDefault } from '@/components/types/styles/typeStyles'
+import { typeFormDefault } from '@/components/types/typeForms'
+import { typeStyleWrap } from '@/components/types/typeStyles'
 
-interface Props extends TypeStyleDefault, TypeFormDefault {
+interface Props extends typeStyleWrap, typeFormDefault {
   children: React.ReactNode
 }
 
@@ -11,13 +11,13 @@ const FormWrapDefault: FC<Props> = ({
   error = false,
   errorMessage,
   children,
-  blockMargin,
+  wrapStyle,
   htmlFor_id,
   disabled = false,
   required = false,
 }) => {
   return (
-    <div className={blockMargin ? `${blockMargin}` : undefined}>
+    <div className={`${wrapStyle ? `${wrapStyle.margin}` : ''}`}>
       <div className='mb-2'>
         <label htmlFor={htmlFor_id} className='text-black font-medium text-xs md:text-base'>
           {label}
