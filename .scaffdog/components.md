@@ -47,18 +47,37 @@ export default {{ inputs.layouts != "" ? inputs.layouts : "" | pascal }}{{ input
 
 ```
 
-# `{{ inputs.parts != "" || "!" }}{{ inputs.top }}/{{ inputs.parts != "" ? inputs.parts : "" }}{{ inputs.parts != "" ? "/" : "" }}{{ inputs.dir != "" ? inputs.dir : "" }}{{ inputs.parts != "" ? "/" : "" }}{{ inputs.name != "" ? inputs.name : "" | pascal }}.stories.tsx`
+# `{{ inputs.layouts != "" || "!" }}{{ inputs.top }}/{{ inputs.layouts | pascal }}.stories.tsx`
 
 ```typescript
-import { type ComponentMeta, type ComponentStoryObj } from "@storybook/react"
-import {{ inputs.name != "" ? inputs.name : "" | pascal }} from "./{{ inputs.name != "" ? inputs.name : "" | pascal }}"
+import { type ComponentMeta, type ComponentStoryObj } from '@storybook/react'
+import {{ inputs.layouts | pascal }} from './{{ inputs.layouts | pascal }}'
 
-type T = typeof {{ inputs.name != "" ? inputs.name : "" | pascal }}
-type Meta = ComponentMeta<T>;
-type Story = ComponentStoryObj<T>;
+type T = typeof {{ inputs.layouts | pascal }}
+type Meta = ComponentMeta<T>
+type Story = ComponentStoryObj<T>
 
 export default {
-  component: {{ inputs.name != "" ? inputs.name : "" | pascal }},
+  component: {{ inputs.layouts | pascal }},
+  args: {},
+} as Meta
+
+export const Default: Story = {}
+
+```
+
+# `{{ inputs.parts != "" || "!" }}{{ inputs.top }}/{{ inputs.parts }}/{{ inputs.dir }}/{{ inputs.name | pascal }}.stories.tsx`
+
+```typescript
+import { type ComponentMeta, type ComponentStoryObj } from '@storybook/react'
+import {{ inputs.name | pascal }} from './{{ inputs.name | pascal }}'
+
+type T = typeof {{ inputs.name | pascal }}
+type Meta = ComponentMeta<T>
+type Story = ComponentStoryObj<T>
+
+export default {
+  component: {{ inputs.name | pascal }},
   args: {},
 } as Meta
 
