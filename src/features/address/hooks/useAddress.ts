@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { getAddress } from '../apis/getAddress'
 import { TypeAddress } from '../types/typeAddress'
-import { errorMessages } from '@/constants/errorMessages'
+import { ERRORMESSAGES } from '@/constants/errorMessages'
 import { validateAddress, validateBlanck } from '@/utils/validations'
 
 export const useAddress = () => {
@@ -33,7 +33,7 @@ export const useAddress = () => {
         }
         setAddress(a)
       } catch (err) {
-        setErrorMessage(errorMessages.dataFetch.error)
+        setErrorMessage(ERRORMESSAGES.dataFetch.error)
       }
     }
     setLoading(false)

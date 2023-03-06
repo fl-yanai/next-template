@@ -1,7 +1,7 @@
 import axios from 'axios'
-import { apiUrls } from '@/constants/apiUrls'
+import { APIURLS } from '@/constants/apiUrls'
 
 export const getAddress = async (zipcode: string) => {
-  const res = await axios.get(`${apiUrls.zipcloud}${zipcode}`)
+  const res = await axios.get(`${APIURLS.zipcloud}${zipcode}`)
   return res.data
 }

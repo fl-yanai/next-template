@@ -5,10 +5,10 @@ const baseUrls = {
   contact: () => `${baseUrls.about()}contact/`,
 }
 
-export const appUrls = {
+export const APPURLS = {
   index: baseUrls.index,
   about: baseUrls.about(),
   news: baseUrls.news(),
-  newsDetail: (id: string) => `${appUrls.news}${id}/`,
+  newsDetail: (id: string) => `${APPURLS.news}${id}/`,
   contact: baseUrls.contact(),
 }

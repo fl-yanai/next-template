@@ -70,6 +70,6 @@ export interface type{{inputs.top | pascal}} {}
 # `{{inputs.constants || "!" }}features/{{inputs.top}}/constants/constant{{inputs.top | pascal}}.ts`
 
 ```typescript
-export const constant{{inputs.top | pascal}} = {}
+export const CONSTANT{{inputs.top | upper}} = {}
 
 ```

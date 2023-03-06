@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router'
 import { FC } from 'react'
-import { appUrls } from '@/constants/appUrls'
+import { APPURLS } from '@/constants/appUrls'
 
 interface Props {
   children: React.ReactNode
@@ -12,7 +12,7 @@ const LayoutAuthCheck: FC<Props> = ({ children }) => {
   const loading = true
 
   if (!loading && user === null) {
-    router.push(appUrls.index)
+    router.push(APPURLS.index)
   }
 
   return <>{!loading && <>{user !== null && <>{children}</>}</>}</>
