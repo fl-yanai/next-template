@@ -26,7 +26,7 @@ yarn dev
 
 #### 新しいファイルを作るとき(.scaffdog)
 
-components、pages、features constants ファイルを新規作成する場合は以下コマンドを使用
+components、pages、features、constants ファイルを新規作成する場合は以下コマンドを使用
 
 ```bash
 yarn scaffdog generate
