@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.(js|jsx|ts|tsx)'],
   addons: [
@@ -16,5 +18,12 @@ module.exports = {
   framework: '@storybook/react',
   core: {
     builder: '@storybook/builder-webpack5',
+  },
+  webpackFinal: async (config) => {
+    config.resolve.alias = {
+      ...config.resolve.alias,
+      '@/constants': path.resolve(__dirname, '../src/constants'),
+    }
+    return config
   },
 }
