@@ -5,17 +5,24 @@ output: 'src/components/'
 ignore: ['.']
 questions:
   top:
-    message: 'ディレクトリを指定してください'
+    message: 'components以下のディレクトリを指定してください'
     choices: ['layouts', 'pages', 'parts']
   layouts:
     if: contains(inputs.top, 'layouts')
     message: 'ファイル名を入力してください(layouts/)'
+  pagesdir:
+    if: contains(inputs.top, 'pages')
+    confirm: 'page以下にディレクトリを作成しますか'
+    initial: true
+  pagedirname:
+    if: contains(inputs.top, 'pages'), inputs.pagesdir == true
+    message: 'page以下のディレクトリ名を入力してください(pages/)'
   pages:
     if: contains(inputs.top, 'pages')
     message: 'ファイル名を入力してください(pages/)'
   parts:
     if: contains(inputs.top, 'parts')
-    message: 'ディレクトリを指定してください(parts/**)'
+    message: 'ディレクトリを指定してください(parts/)'
     choices: ['elements', 'modules']
   dir:
     if: contains(inputs.top, 'parts')
@@ -25,7 +32,7 @@ questions:
     message: 'ファイル名を入力してください(parts/**)'
 ---
 
-# `{{ inputs.top }}/{{ inputs.layouts != "" ? inputs.layouts : "" | pascal }}{{ inputs.pages != "" ? inputs.pages : "" | pascal }}{{ inputs.parts != "" ? inputs.parts : "" }}{{ inputs.parts != "" ? "/" : "" }}{{ inputs.dir != "" ? inputs.dir : "" }}{{ inputs.parts != "" ? "/" : "" }}{{ inputs.name != "" ? inputs.name : "" | pascal }}.tsx`
+# `{{ inputs.top }}/{{ inputs.layouts != "" ? inputs.layouts : "" | pascal }}{{ inputs.pagesdir == true ? "/" : "" }}{{ inputs.pagedirname != "" ? inputs.pagedirname : "" }}{{ inputs.pagesdir == true ? "/" : "" }}{{ inputs.pages != "" ? inputs.pages : "" | pascal }}{{ inputs.parts != "" ? inputs.parts : "" }}{{ inputs.parts != "" ? "/" : "" }}{{ inputs.dir != "" ? inputs.dir : "" }}{{ inputs.parts != "" ? "/" : "" }}{{ inputs.name != "" ? inputs.name : "" | pascal }}.tsx`
 
 ```typescript
 import { FC } from 'react'
