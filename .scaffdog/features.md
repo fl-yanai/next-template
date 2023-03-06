@@ -7,20 +7,23 @@ questions:
   top:
     message: 'ディレクトリ名を入力してください'
   apis:
-    confirm: 'apisディレクトリを作成しますか？'
+    confirm: 'apisファイルを作成しますか？'
     initial: false
   apipatt:
     if: inputs.apis == true
     message: 'メソッドを選択してください(その他はotherを選び編集)'
     choices: ['get', 'post', 'update', 'delete', 'other']
   hooks:
-    confirm: 'hooksディレクトリを作成しますか？'
-    initial: true
+    confirm: 'hooksファイルを作成しますか？'
+    initial: false
   types:
-    confirm: 'typesディレクトリを作成しますか？'
+    confirm: 'typesファイルを作成しますか？'
     initial: false
   constants:
-    confirm: 'constantsディレクトリを作成しますか？'
+    confirm: 'constantsファイルを作成しますか？'
+    initial: false
+  css:
+    confirm: 'cssファイルを作成しますか(global.cssに上書きされます)'
     initial: false
 ---
 
@@ -71,5 +74,18 @@ export interface type{{inputs.top | pascal}} {}
 
 ```typescript
 export const CONSTANT{{inputs.top | upper}} = {}
+
+```
+
+# `{{inputs.css || "!" }}features/{{inputs.top}}/styles/style{{inputs.top | pascal}}.css`
+
+```css
+
+```
+
+# `{{inputs.css || "!" }}{{resolve document.dir "../src/styles/globals.css"}}`
+
+```css
+{{ read output.abs }}@import '@/features/{{inputs.top}}/styles/style{{inputs.top | pascal}}.css';
 
 ```

@@ -24,6 +24,14 @@ yarn install
 yarn dev
 ```
 
+#### 新しいファイルを作るとき(.scaffdog)
+
+components、pages、features constants ファイルを新規作成する場合は以下コマンドを使用
+
+```bash
+yarn scaffdog generate
+```
+
 ## ディレクトリ構成
 
 構成は次の記事を参考にしている
@@ -67,14 +75,6 @@ Next のページコンポーネントを保存
 汎用的なユーティリティ関数を保存
 
 ## その他
-
-### .scaffdog
-
-components、pages、features ファイルを新規作成する場合は以下コマンドを使用
-
-```bash
-yarn scaffdog generate
-```
 
 ### .storybook
 

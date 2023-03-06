@@ -30,12 +30,16 @@ questions:
   name:
     if: contains(inputs.top, 'parts')
     message: 'ファイル名を入力してください(parts/**)'
+  css:
+    confirm: 'cssファイルを作成しますか'
+    initial: false
 ---
 
 # `{{ inputs.top }}/{{ inputs.layouts != "" ? inputs.layouts : "" | pascal }}{{ inputs.pagesdir == true ? "/" : "" }}{{ inputs.pagedirname != "" ? inputs.pagedirname : "" }}{{ inputs.pagesdir == true ? "/" : "" }}{{ inputs.pages != "" ? inputs.pages : "" | pascal }}{{ inputs.parts != "" ? inputs.parts : "" }}{{ inputs.parts != "" ? "/" : "" }}{{ inputs.dir != "" ? inputs.dir : "" }}{{ inputs.parts != "" ? "/" : "" }}{{ inputs.name != "" ? inputs.name : "" | pascal }}.tsx`
 
 ```typescript
 import { FC } from 'react'
+{{if inputs.css}}import styles from './{{ inputs.layouts != "" ? inputs.layouts : "" | pascal }}{{ inputs.pages != "" ? inputs.pages : "" | pascal }}{{ inputs.name != "" ? inputs.name : "" | pascal }}.module.css'{{end}}
 
 interface Props {}
 
@@ -82,5 +86,11 @@ export default {
 } as Meta
 
 export const Default: Story = {}
+
+```
+
+# `{{inputs.css || "!"}}{{ inputs.top }}/{{ inputs.layouts != "" ? inputs.layouts : "" | pascal }}{{ inputs.pagesdir == true ? "/" : "" }}{{ inputs.pagedirname != "" ? inputs.pagedirname : "" }}{{ inputs.pagesdir == true ? "/" : "" }}{{ inputs.pages != "" ? inputs.pages : "" | pascal }}{{ inputs.parts != "" ? inputs.parts : "" }}{{ inputs.parts != "" ? "/" : "" }}{{ inputs.dir != "" ? inputs.dir : "" }}{{ inputs.parts != "" ? "/" : "" }}{{ inputs.name != "" ? inputs.name : "" | pascal }}.module.css`
+
+```css
 
 ```
