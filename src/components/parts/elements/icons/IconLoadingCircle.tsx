@@ -1,9 +1,16 @@
-const IconLoadingCircle = () => {
+import { FC } from 'react'
+
+interface Props {
+  circleColor?: '#ffffff' | '#000000'
+  size?: number
+}
+
+const IconLoadingCircle: FC<Props> = ({ circleColor = '#ffffff', size = 64 }) => {
   return (
     <svg
       xmlns='http://www.w3.org/2000/svg'
-      width='64px'
-      height='64px'
+      width={`${size}px`}
+      height={`${size}px`}
       viewBox='0 0 100 100'
       preserveAspectRatio='xMidYMid'
       className='uil-spin'
@@ -11,7 +18,7 @@ const IconLoadingCircle = () => {
       <rect x='0' y='0' width='100' height='100' fill='none' className='bk' />
       <g transform='translate(50 50)'>
         <g transform='rotate(0) translate(34 0)'>
-          <circle cx='0' cy='0' r='8' fill='#ffffff'>
+          <circle cx='0' cy='0' r='8' fill={circleColor}>
             <animate
               attributeName='opacity'
               from='1'
@@ -32,7 +39,7 @@ const IconLoadingCircle = () => {
           </circle>
         </g>
         <g transform='rotate(45) translate(34 0)'>
-          <circle cx='0' cy='0' r='8' fill='#ffffff'>
+          <circle cx='0' cy='0' r='8' fill={circleColor}>
             <animate
               attributeName='opacity'
               from='1'
@@ -53,7 +60,7 @@ const IconLoadingCircle = () => {
           </circle>
         </g>
         <g transform='rotate(90) translate(34 0)'>
-          <circle cx='0' cy='0' r='8' fill='#ffffff'>
+          <circle cx='0' cy='0' r='8' fill={circleColor}>
             <animate
               attributeName='opacity'
               from='1'
@@ -74,7 +81,7 @@ const IconLoadingCircle = () => {
           </circle>
         </g>
         <g transform='rotate(135) translate(34 0)'>
-          <circle cx='0' cy='0' r='8' fill='#ffffff'>
+          <circle cx='0' cy='0' r='8' fill={circleColor}>
             <animate
               attributeName='opacity'
               from='1'
@@ -95,7 +102,7 @@ const IconLoadingCircle = () => {
           </circle>
         </g>
         <g transform='rotate(180) translate(34 0)'>
-          <circle cx='0' cy='0' r='8' fill='#ffffff'>
+          <circle cx='0' cy='0' r='8' fill={circleColor}>
             <animate
               attributeName='opacity'
               from='1'
@@ -116,7 +123,7 @@ const IconLoadingCircle = () => {
           </circle>
         </g>
         <g transform='rotate(225) translate(34 0)'>
-          <circle cx='0' cy='0' r='8' fill='#ffffff'>
+          <circle cx='0' cy='0' r='8' fill={circleColor}>
             <animate
               attributeName='opacity'
               from='1'
@@ -137,7 +144,7 @@ const IconLoadingCircle = () => {
           </circle>
         </g>
         <g transform='rotate(270) translate(34 0)'>
-          <circle cx='0' cy='0' r='8' fill='#ffffff'>
+          <circle cx='0' cy='0' r='8' fill={circleColor}>
             <animate
               attributeName='opacity'
               from='1'
@@ -158,7 +165,7 @@ const IconLoadingCircle = () => {
           </circle>
         </g>
         <g transform='rotate(315) translate(34 0)'>
-          <circle cx='0' cy='0' r='8' fill='#ffffff'>
+          <circle cx='0' cy='0' r='8' fill={circleColor}>
             <animate
               attributeName='opacity'
               from='1'

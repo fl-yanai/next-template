@@ -13,9 +13,9 @@ questions:
   pagesdir:
     if: contains(inputs.top, 'pages')
     confirm: 'page以下にディレクトリを作成しますか'
-    initial: true
+    initial: false
   pagedirname:
-    if: contains(inputs.top, 'pages'), inputs.pagesdir == true
+    if: inputs.pagesdir == true
     message: 'page以下のディレクトリ名を入力してください(pages/)'
   pages:
     if: contains(inputs.top, 'pages')
@@ -44,5 +44,24 @@ const {{ inputs.layouts != "" ? inputs.layouts : "" | pascal }}{{ inputs.pages !
 }
 
 export default {{ inputs.layouts != "" ? inputs.layouts : "" | pascal }}{{ inputs.pages != "" ? inputs.pages : "" | pascal }}{{ inputs.name != "" ? inputs.name : "" | pascal }}
+
+```
+
+# `{{ inputs.parts != "" || "!" }}{{ inputs.top }}/{{ inputs.parts != "" ? inputs.parts : "" }}{{ inputs.parts != "" ? "/" : "" }}{{ inputs.dir != "" ? inputs.dir : "" }}{{ inputs.parts != "" ? "/" : "" }}{{ inputs.name != "" ? inputs.name : "" | pascal }}.stories.tsx`
+
+```typescript
+import { type ComponentMeta, type ComponentStoryObj } from "@storybook/react"
+import {{ inputs.name != "" ? inputs.name : "" | pascal }} from "./{{ inputs.name != "" ? inputs.name : "" | pascal }}"
+
+type T = typeof {{ inputs.name != "" ? inputs.name : "" | pascal }}
+type Meta = ComponentMeta<T>;
+type Story = ComponentStoryObj<T>;
+
+export default {
+  component: {{ inputs.name != "" ? inputs.name : "" | pascal }},
+  args: {},
+} as Meta
+
+export const Default: Story = {}
 
 ```
