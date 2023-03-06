@@ -68,6 +68,14 @@ Next のページコンポーネントを保存
 
 ## その他
 
+### .scaffdog
+
+components、pages、features ファイルを新規作成する場合は以下コマンドを使用
+
+```bash
+yarn scaffdog generate
+```
+
 ### .vscode
 
 eslint,prettier の自動フォーマットを行う
