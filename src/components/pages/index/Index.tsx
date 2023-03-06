@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import LayoutDataFetching from '../layouts/LayoutDataFetching'
-import SelectOneValue from '../parts/elements/selects/SelectOneValue'
+import LayoutDataFetching from '../../layouts/LayoutDataFetching'
+import SelectOneValue from '../../parts/elements/selects/SelectOneValue'
 import FormInputText from '@/components/parts/modules/forms/FormInputText'
 import { typeSelectOptions } from '@/components/types/typeSelects'
 import { useAddress } from '@/features/address/hooks/useAddress'
