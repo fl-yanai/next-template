@@ -4,23 +4,25 @@ root: '.'
 output: 'src/'
 ignore: ['.']
 questions:
+  dir:
+    message: 'ページディレクトリを入力してください(ex:about/contact/)'
   name:
-    message: 'ページ名を入力してください(ex:about/contact)'
+    message: 'ページ名を入力してください'
 ---
 
-# `pages/{{ inputs.name }}/index.tsx`
+# `pages/{{ inputs.dir }}{{ inputs.name }}/index.tsx`
 
 ```typescript
-import Index from '@/components/pages/{{ inputs.name }}/Index'
+import Index from '@/components/pages/{{ inputs.dir }}{{ inputs.name }}/Index'
 
-const {{ inputs.name | split "/" | slice -1 | pascal }} = () => {
+const {{ inputs.name | pascal }} = () => {
   return <Index />
 }
-export default {{ inputs.name | split "/" | slice -1 | pascal }}
+export default {{ inputs.name | pascal }}
 
 ```
 
-# `components/pages/{{ inputs.name }}/Index.tsx`
+# `components/pages/{{ inputs.dir }}{{ inputs.name }}/Index.tsx`
 
 ```typescript
 import { FC } from 'react'
