@@ -27,26 +27,26 @@ questions:
     initial: false
 ---
 
-# `{{inputs.apis || "!" }}features/{{inputs.top}}/apis/{{inputs.apipatt}}{{inputs.top | pascal}}.ts`
+# `{{inputs.apis || "!" }}features/{{inputs.top}}/apis/{{inputs.apipatt}}{{inputs.top | split "/" | slice -1 | pascal}}.ts`
 
 ```typescript
 import axios from 'axios'
 
-export const {{inputs.apipatt}}{{inputs.top | pascal}} = async () => {
+export const {{inputs.apipatt}}{{inputs.top | split "/" | slice -1 | pascal}} = async () => {
   const res = {}
   return res
 }
 
 ```
 
-# `{{inputs.hooks || "!" }}features/{{inputs.top}}/hooks/use{{inputs.top | pascal}}.ts`
+# `{{inputs.hooks || "!" }}features/{{inputs.top}}/hooks/use{{inputs.top | split "/" | slice -1 | pascal}}.ts`
 
 ```typescript
 import { useState } from 'react'
-{{if inputs.apis}}import { {{inputs.apipatt}}{{inputs.top | pascal}} } from '../apis/{{inputs.apipatt}}{{inputs.top | pascal}}'{{end}}
-{{if inputs.types}}import { type{{inputs.top | pascal}} } from '../types/type{{inputs.top | pascal}}'{{end}}
-{{if inputs.constants}}import { constant{{inputs.top | pascal}} } from '../constant/constant{{inputs.top | pascal}}'{{end}}
-export const use{{inputs.top | pascal}} = () => {
+{{if inputs.apis}}import { {{inputs.apipatt}}{{inputs.top | split "/" | slice -1 | pascal}} } from '../apis/{{inputs.apipatt}}{{inputs.top | split "/" | slice -1 | pascal}}'{{end}}
+{{if inputs.types}}import { type{{inputs.top | split "/" | slice -1 | pascal}} } from '../types/type{{inputs.top | split "/" | slice -1 | pascal}}'{{end}}
+{{if inputs.constants}}import { constant{{inputs.top | split "/" | slice -1 | pascal}} } from '../constant/constant{{inputs.top | split "/" | slice -1 | pascal}}'{{end}}
+export const use{{inputs.top | split "/" | slice -1 | pascal}} = () => {
   const [loading, setLoading] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
 
@@ -63,21 +63,21 @@ export const use{{inputs.top | pascal}} = () => {
 
 ```
 
-# `{{inputs.types || "!" }}features/{{inputs.top}}/types/type{{inputs.top | pascal}}.ts`
+# `{{inputs.types || "!" }}features/{{inputs.top}}/types/type{{inputs.top | split "/" | slice -1 | pascal}}.ts`
 
 ```typescript
-export interface type{{inputs.top | pascal}} {}
+export interface type{{inputs.top | split "/" | slice -1 | pascal}} {}
 
 ```
 
-# `{{inputs.constants || "!" }}features/{{inputs.top}}/constants/constant{{inputs.top | pascal}}.ts`
+# `{{inputs.constants || "!" }}features/{{inputs.top}}/constants/constant{{inputs.top | split "/" | slice -1 | pascal}}.ts`
 
 ```typescript
 export const CONSTANT{{inputs.top | upper}} = {}
 
 ```
 
-# `{{inputs.css || "!" }}features/{{inputs.top}}/styles/style{{inputs.top | pascal}}.css`
+# `{{inputs.css || "!" }}features/{{inputs.top}}/styles/style{{inputs.top | split "/" | slice -1 | pascal}}.css`
 
 ```css
 
@@ -86,6 +86,6 @@ export const CONSTANT{{inputs.top | upper}} = {}
 # `{{inputs.css || "!" }}{{resolve document.dir "../src/styles/globals.css"}}`
 
 ```css
-{{ read output.abs }}@import '@/features/{{inputs.top}}/styles/style{{inputs.top | pascal}}.css';
+{{ read output.abs }}@import '@/features/{{inputs.top}}/styles/style{{inputs.top | split "/" | slice -1 | pascal}}.css';
 
 ```
