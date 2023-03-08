@@ -14,7 +14,7 @@ questions:
   apipatt:
     if: inputs.apis == true
     message: 'メソッドを選択してください(その他はotherを選び編集)'
-    choices: ['get', 'post', 'update', 'delete', 'other']
+    choices: ['get', 'post', 'put', 'delete', 'other']
   hooks:
     confirm: 'hooksファイルを作成しますか？'
     initial: false
