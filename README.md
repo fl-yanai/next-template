@@ -80,6 +80,12 @@ Next のページコンポーネントを保存
 
 scaffdog で各コンポーネントごと自動で作られる
 
+コマンド
+
+```bash
+yarn storybook
+```
+
 ### .vscode
 
 eslint,prettier の自動フォーマットを行う
@@ -87,3 +93,11 @@ eslint,prettier の自動フォーマットを行う
 ### tailwind.config.js
 
 - clamp-\*\*-[minSize,maxSize,minDisplayWidth,maxDisplyaWidth]で clamp を設定してくれる
+
+### package.json
+
+パッケージは随時アップデート
+
+```bash
+yarn package:upgrade
+```
