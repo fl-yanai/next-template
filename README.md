@@ -96,8 +96,16 @@ eslint,prettier の自動フォーマットを行う
 
 ### package.json
 
-パッケージは随時アップデート
+#### パッケージは随時アップデート
+
+- アップデート可能なパッケージの確認
 
 ```bash
-yarn package:upgrade
+yarn outdated
+```
+
+- アップデート
+
+```bash
+yarn upgrade-interactive --latest
 ```
