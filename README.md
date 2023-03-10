@@ -38,7 +38,7 @@ yarn scaffdog generate
 
 [React のディレクトリ構造パターン例](https://www.nitaking.dev/react-directory-structure-2021)
 
-## ディレクトリ構成
+### 構成
 
 ### /src/components
 
