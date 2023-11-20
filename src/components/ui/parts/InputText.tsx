@@ -51,7 +51,7 @@ export const InputText: FC<Props<any>> = ({
       {label !== undefined && (
         <label
           htmlFor={forId}
-          className={`mb-1 block text-sm font-medium text-gray-700 ${
+          className={`mb-1 block text-sm font-medium ${
             required ? 'after:ml-0.5 after:text-red-500 after:content-["*"]' : ''
           }`}
         >
@@ -68,7 +68,7 @@ export const InputText: FC<Props<any>> = ({
           validateAction(value);
           blurRef.current = true;
         }}
-        className={`block w-full py-1 px-2 rounded-md border focus:ring-0 shadow-sm disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 ${
+        className={`block w-full py-1 px-2 rounded-md border focus:ring-0 shadow-sm disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500 text-black ${
           isError
             ? 'border-red-500 focus:border-red-500 focus:outline-red-500'
             : 'border-gray-400 focus:border-primary-400 focus:outline-primary-500'

@@ -10,6 +10,7 @@ export const useQuery = <T extends object>(queryTargets: T) => {
 
   useEffect(() => {
     setLoading(true);
+    // eslint-disable-next-line
     const _tq: any = [];
     Object.keys(targetQueryValue).map((target) => {
       _tq.push({ [`${target}`]: searchParams.get(target) });
@@ -19,6 +20,7 @@ export const useQuery = <T extends object>(queryTargets: T) => {
     }, {});
     setTargetQueryValue(mergedObject);
     setLoading(false);
+    // eslint-disable-next-line
   }, [searchParams]);
 
   // 1つのクエリに対して1つしか変更できない

@@ -3,5 +3,6 @@ const BASEURL = {
 };
 
 export const APPURLS = {
-  home: BASEURL.root,
+  top: BASEURL.root,
+  about: `${BASEURL.root}about/`,
 };
