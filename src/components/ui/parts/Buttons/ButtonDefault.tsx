@@ -83,7 +83,7 @@ export const ButtonDefault: FC<Props> = ({
         return 'px-5 py-2.5 text-sm';
     }
   })();
-  const style = `rounded-lg border text-center font-medium shadow-sm transition-all disabled:cursor-not-allowed disabled:pointer-events-none ${buttonColor} ${buttonSize}${
+  const style = `block rounded-lg border text-center font-medium shadow-sm transition-all disabled:cursor-not-allowed disabled:pointer-events-none ${buttonColor} ${buttonSize}${
     customStyle === undefined ? '' : ` ${customStyle}`
   }`;
   return (

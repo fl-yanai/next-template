@@ -55,7 +55,7 @@ export const InputText: FC<Props<any>> = ({
             required ? 'after:ml-0.5 after:text-red-500 after:content-["*"]' : ''
           }`}
         >
-          Email
+          {label}
         </label>
       )}
       <input
